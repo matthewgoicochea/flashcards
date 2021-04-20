@@ -1,0 +1,262 @@
+{
+  "decks": [
+    {
+      "id": 1,
+      "name": "Rendering in React",
+      "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation."
+    },
+    {
+      "name": "React Router",
+      "description": "React Router is a collection of navigational components that compose declaratively with your application.",
+      "id": 2
+    },
+    {
+      "name": "Music Theory",
+      "description": "a deck about music",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "Japanese",
+      "description": "to help learn japanese"
+    },
+    {
+      "name": "Korean",
+      "description": "deck to learn korean",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "name": "French",
+      "description": "learn french slow"
+    },
+    {
+      "name": "Spanish",
+      "description": "a deck to learn spanish",
+      "id": 8
+    },
+    {
+      "name": "asdgdsa",
+      "description": "saf",
+      "id": 9
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "front": "Differentiate between Real DOM and Virtual DOM.",
+      "back": "Virtual DOM updates are faster but do not directly update the HTML",
+      "deckId": 1
+    },
+    {
+      "id": 2,
+      "front": "How do you modify the state of a different React component?",
+      "back": "Not at all! State is visible to the component only.",
+      "deckId": 1
+    },
+    {
+      "id": 3,
+      "front": "How do you pass data 'down' to a React child component?",
+      "back": "As properties or props",
+      "deckId": 1
+    },
+    {
+      "front": "What path will match the follow Route?\n<Route>\n  <NotFound />\n</Route>",
+      "back": "All paths. A route with no path matches all URL's",
+      "deckId": 2,
+      "id": 4
+    },
+    {
+      "front": "What does <Switch> do?",
+      "back": "Renders the first matching child <Route> ",
+      "deckId": 2,
+      "id": 5
+    },
+    {
+      "front": "a",
+      "back": "b",
+      "id": 7,
+      "deckId": "1"
+    },
+    {
+      "front": "how many primary notes are there",
+      "back": "seven notes",
+      "deckId": 3,
+      "id": 8
+    },
+    {
+      "front": "standard tuning?",
+      "back": "EADGBE",
+      "deckId": 3,
+      "id": 9
+    },
+    {
+      "front": "Japan",
+      "back": "Nippon",
+      "deckId": 4,
+      "id": 10
+    },
+    {
+      "front": "little sister",
+      "back": "imouto",
+      "deckId": 4,
+      "id": 11
+    },
+    {
+      "front": "phone number",
+      "back": "denwa bangou",
+      "deckId": 4,
+      "id": 12
+    },
+    {
+      "front": "tteok",
+      "back": "rice noodle",
+      "deckId": 5,
+      "id": 13
+    },
+    {
+      "front": "new music card",
+      "back": "quarter note gets 1/4 beats",
+      "deckId": null,
+      "id": 21
+    },
+    {
+      "front": "new music",
+      "back": "hi",
+      "deckId": 3,
+      "id": 22
+    },
+    {
+      "front": "bulgogi",
+      "back": "meat",
+      "deckId": 5,
+      "id": 23
+    },
+    {
+      "front": "umma",
+      "back": "mom",
+      "deckId": 5,
+      "id": 26
+    },
+    {
+      "front": "oui",
+      "back": "yes",
+      "deckId": null,
+      "id": 27
+    },
+    {
+      "front": "oui",
+      "back": "yes",
+      "deckId": 6,
+      "id": 28
+    },
+    {
+      "front": "pomme",
+      "back": "fruit",
+      "deckId": 6,
+      "id": 29
+    },
+    {
+      "front": "otouto",
+      "back": "lil bro",
+      "deckId": 4,
+      "id": 30
+    },
+    {
+      "front": "okaasanN",
+      "back": "motherR",
+      "id": 31,
+      "deckId": "4"
+    },
+    {
+      "front": "otousan",
+      "back": "dad",
+      "id": 32,
+      "deckId": "4"
+    },
+    {
+      "front": "katana",
+      "back": "sword",
+      "deckId": null,
+      "id": 34
+    },
+    {
+      "front": "two",
+      "back": "two",
+      "deckId": null,
+      "id": 36
+    },
+    {
+      "front": "two",
+      "back": "two",
+      "deckId": null,
+      "id": 38
+    },
+    {
+      "front": "kin",
+      "back": "gold",
+      "deckId": 4,
+      "id": 39
+    },
+    {
+      "front": "muraski",
+      "back": "purple",
+      "deckId": 4,
+      "id": 40
+    },
+    {
+      "front": "shiro",
+      "back": "white",
+      "deckId": 4,
+      "id": 41
+    },
+    {
+      "front": "kuro",
+      "back": "blck",
+      "id": 42,
+      "deckId": "4"
+    },
+    {
+      "front": "jinjja",
+      "back": "really",
+      "deckId": 5,
+      "id": 43
+    },
+    {
+      "front": "hola",
+      "back": "hello",
+      "id": 44,
+      "deckId": "8"
+    },
+    {
+      "id": 45,
+      "front": "Uno",
+      "back": "One",
+      "deckId": 8
+    },
+    {
+      "id": 46,
+      "front": "Dos",
+      "back": "Two",
+      "deckId": 8
+    },
+    {
+      "front": "delete",
+      "back": "nasfd",
+      "deckId": 3,
+      "id": 47
+    },
+    {
+      "id": 48,
+      "front": "hola",
+      "back": "hello!",
+      "deckId": "8"
+    },
+    {
+      "id": 49,
+      "front": "Queso",
+      "back": "Cheese",
+      "deckId": 8
+    }
+  ]
+}
