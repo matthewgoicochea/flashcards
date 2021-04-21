@@ -51,7 +51,7 @@ function EditCard({ newCard, setNewCard, currentDeck }) {
     };
     updateCard(editedCard);
     history.push(`/decks/${deckId}`);
-		// resets edit component 
+    // resets edit component
     setEditCardState({ edit: false });
   };
 

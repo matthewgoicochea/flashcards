@@ -21,6 +21,12 @@ function Layout() {
     description: "",
   });
   const [newCard, setNewCard] = useState({ front: "", back: "" });
+  //
+  const [editCardState, setEditCardState] = useState({
+    edit: false,
+    front: "Front",
+    back: "Back",
+  });
 
   // for navigation
   const history = useHistory();
@@ -91,6 +97,8 @@ function Layout() {
               newCard={newCard}
               setNewCard={setNewCard}
               currentDeck={currentDeck}
+              editCardState={editCardState}
+              setEditCardState={setEditCardState}
             />
           </Route>
           {/* ADD CARD */}
@@ -100,6 +108,8 @@ function Layout() {
               setNewCard={setNewCard}
               currentDeck={currentDeck}
               setCurrentDeck={setCurrentDeck}
+              editCardState={editCardState}
+              setEditCardState={setEditCardState}
             />
           </Route>
           {/* NEW DECK */}
@@ -112,7 +122,12 @@ function Layout() {
           </Route>
           {/* EDIT DECK */}
           <Route path={`/decks/:deckId/edit`}>
-            <EditDeck OnClick={OnClick} newDeckObject={newDeckObject} />
+            <EditDeck
+              OnClick={OnClick}
+              newDeckObject={newDeckObject}
+              editCardState={editCardState}
+              setEditCardState={setEditCardState}
+            />
           </Route>
           {/* STUDY DECK */}
           <Route path={`/decks/:deckId/study`}>

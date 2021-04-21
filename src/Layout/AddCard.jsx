@@ -4,12 +4,19 @@ import { createCard, readDeck } from "../utils/api";
 import CardForm from "./CardForm";
 import BreadcrumbBar from "./BreadcrumbBar";
 
-function AddCard({ setCurrentDeck, currentDeck, newCard, setNewCard }) {
+function AddCard({
+  setCurrentDeck,
+  currentDeck,
+  newCard,
+  setNewCard,
+  editCardState,
+  setEditCardState,
+}) {
   const history = useHistory();
   const params = useParams();
   const deckId = params.deckId;
 
-	// sets current deck 
+  // sets current deck
   useEffect(() => {
     const abortController = new AbortController();
     const deck = readDeck(deckId);
@@ -18,12 +25,12 @@ function AddCard({ setCurrentDeck, currentDeck, newCard, setNewCard }) {
     });
     return () => abortController.abort();
   }, [deckId]);
-	
+
   const OnDone = () => {
     history.push(`/decks/${deckId}`);
   };
 
-	// saves card and re-initializes AddCard component
+  // saves card and re-initializes AddCard component
   const OnSave = () => {
     createCard(currentDeck.id, newCard);
     setNewCard({ ...newCard, front: "", back: "" });
@@ -43,6 +50,8 @@ function AddCard({ setCurrentDeck, currentDeck, newCard, setNewCard }) {
         setNewCard={setNewCard}
         cardFront={"Front side of card"}
         cardBack={"Back side of card"}
+        editCardState={editCardState}
+        setEditCardState={setEditCardState}
       />
       <button
         className="btn btn-secondary mr-2"
