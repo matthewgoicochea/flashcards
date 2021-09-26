@@ -142,8 +142,13 @@ export async function deleteDeck(deckId, signal) {
  *  a promise that resolves to a possible empty array of cards.
  */
 export async function listCards(deckId, signal) {
-  const url = `${API_BASE_URL}/cards?deckId=${deckId}`;
-  return await fetchJson(url, { signal });
+  if (deckId) {
+    const url = `${API_BASE_URL}/cards?deckId=${deckId}`;
+    return await fetchJson(url, { signal });
+  } else {
+    const url = `${API_BASE_URL}/cards`;
+    return await fetchJson(url, { signal });
+  }
 }
 
 /**
