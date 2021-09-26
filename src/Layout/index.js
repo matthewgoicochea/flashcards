@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 import Header from "./Header";
 import NotFound from "./NotFound";
-import Home from "./Home";
+import Dashboard from "./Dashboard";
 import CreateDeck from "./CreateDeck";
 import DeckList from "./DeckList";
 import Study from "./Study";
@@ -83,7 +83,7 @@ function Layout() {
         <Switch>
           {/* HOME */}
           <Route exact={true} path="/">
-            <Home />
+            <Dashboard />
             <DeckList
               OnClick={OnClick}
               allDecks={allDecks}
