@@ -83,7 +83,7 @@ function Layout() {
         <Switch>
           {/* HOME */}
           <Route exact={true} path="/">
-            <Dashboard />
+            <Dashboard allDecks={allDecks} />
             <DeckList
               OnClick={OnClick}
               allDecks={allDecks}
