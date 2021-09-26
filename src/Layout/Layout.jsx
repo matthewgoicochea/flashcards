@@ -28,6 +28,11 @@ function Layout() {
     back: "Back",
   });
 
+  //main state
+  const [state, setState] = useState({
+    cards: [],
+  });
+
   // for navigation
   const history = useHistory();
 
@@ -83,8 +88,10 @@ function Layout() {
         <Switch>
           {/* HOME */}
           <Route exact={true} path="/">
-            <Dashboard allDecks={allDecks} />
+            <Dashboard allDecks={allDecks} state={state}/>
             <DeckList
+              state={state}
+              setState={setState}
               OnClick={OnClick}
               allDecks={allDecks}
               setAllDecks={setAllDecks}

@@ -1,8 +1,8 @@
 import React, { useEffect, Fragment } from "react";
 import { useHistory } from "react-router";
-import { listDecks } from "../utils/api";
+import { listAllCards, listDecks } from "../utils/api";
 
-function DeckList({ OnClick, allDecks, setAllDecks }) {
+function DeckList({ state, setState, OnClick, allDecks, setAllDecks }) {
   const history = useHistory();
 
   // creates iterable array from allDecks
@@ -16,6 +16,12 @@ function DeckList({ OnClick, allDecks, setAllDecks }) {
   // loads all decks
   useEffect(() => {
     const abortController = new AbortController();
+    async function loadState() {
+      const cards = await listAllCards(abortController.signal);
+      setState({ ...state, cards: cards });
+    }
+    loadState();
+    //
     async function loadDecksWithCards() {
       const decks = await listDecks(abortController.signal);
       setAllDecks(decks);
