@@ -80,7 +80,6 @@ function Layout() {
     <>
       <Header />
       <div className="container">
-        {/* TODO: Implement the screen starting here */}
         <Switch>
           {/* HOME */}
           <Route exact={true} path="/">
