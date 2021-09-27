@@ -10,6 +10,7 @@ import AddCard from "./AddCard";
 import EditCard from "./EditCard";
 import { createDeck, deleteCard, deleteDeck } from "../utils/api";
 import ViewDeck from "./ViewDeck";
+import DeckList from "./DeckList";
 
 function Layout() {
   // lifted states
@@ -88,14 +89,13 @@ function Layout() {
         <Switch>
           {/* HOME */}
           <Route exact={true} path="/">
-            <Dashboard
-              allDecks={allDecks}
-              setAllDecks={setAllDecks}
+            <DeckList
               state={state}
               setState={setState}
               OnClick={OnClick}
+              allDecks={allDecks}
+              setAllDecks={setAllDecks}
             />
-            
           </Route>
           {/* EDIT CARD */}
           <Route path="/decks/:deckId/cards/:cardId/edit">

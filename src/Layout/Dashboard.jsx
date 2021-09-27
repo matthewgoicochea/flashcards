@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import DeckList from "./DeckList";
+import { listAllCards } from "../utils/api";
+import { listDecks } from "../utils/api";
 
-function Dashboard({ state, setState, allDecks, setAllDecks, OnClick }) {
+function Dashboard({ state, setState, allDecks, OnClick, setAllDecks }) {
   function toggleDarkMode() {
     setState({ ...state, darkMode: !state.darkMode });
 
@@ -39,7 +41,7 @@ function Dashboard({ state, setState, allDecks, setAllDecks, OnClick }) {
       moon.classList.remove("d-none");
 
       body.classList.remove("bg-dark");
-      body.classList.remove("text-light");
+       body.classList.remove("text-light");
       body.classList.add("text-dark");
 
       buttons.forEach((btn) => {
@@ -56,33 +58,28 @@ function Dashboard({ state, setState, allDecks, setAllDecks, OnClick }) {
   }
 
   return (
-    <>
-      <div className="container">
-        <div className="row">
-          <h1 className="col h1">Dashboard</h1>
-          <div className="col text-end">
-            <button className="btn shadow-none" onClick={toggleDarkMode}>
-              <i
-                className="bi bi-brightness-high text-light d-none"
-                id="sun"
-              ></i>
-              <i className="bi bi-moon text-dark" id="moon"></i>
-            </button>
-          </div>
-        </div>
-        <Link to="/decks/new">
-          <button
-            type="button"
-            className="btn btn-secondary mb-2"
-            id="createDeck"
-          >
-            Create Deck
+    <div className="container">
+      <div className="row">
+        <h1 className="col h1">Dashboard</h1>
+        <div className="col text-end">
+          <button className="btn shadow-none" onClick={toggleDarkMode}>
+            <i className="bi bi-brightness-high text-light" id="sun"></i>
+            <i className="bi bi-moon text-dark" id="moon"></i>
           </button>
-        </Link>
-        <p>Decks: {allDecks.length}</p>
-        <p>Cards: {state.cards.length}</p>
-        <div className="study-checklist"></div>
+        </div>
       </div>
+      <Link to="/decks/new">
+        <button
+          type="button"
+          className="btn btn-secondary mb-2"
+          id="createDeck"
+        >
+          Create Deck
+        </button>
+      </Link>
+      <p>Decks: {/*allDecks.length*/}</p>
+      <p>Cards: {/*state.cards.length*/}</p>
+      <div className="study-checklist"></div>
       <DeckList
         state={state}
         setState={setState}
@@ -90,7 +87,7 @@ function Dashboard({ state, setState, allDecks, setAllDecks, OnClick }) {
         allDecks={allDecks}
         setAllDecks={setAllDecks}
       />
-    </>
+    </div>
   );
 }
 

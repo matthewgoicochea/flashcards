@@ -1,6 +1,7 @@
 import React, { useEffect, Fragment } from "react";
-import { useHistory } from "react-router";
+import { useHistory, Link } from "react-router-dom";
 import { listAllCards, listDecks } from "../utils/api";
+import Dashboard from "./Dashboard";
 
 function DeckList({ state, setState, OnClick, allDecks, setAllDecks }) {
   const history = useHistory();
@@ -86,6 +87,16 @@ function DeckList({ state, setState, OnClick, allDecks, setAllDecks }) {
 
   return (
     <Fragment>
+      <Link to="/decks/new" className="text-decoration-none">
+        <button
+          type="button"
+          className="btn btn-secondary mb-2"
+          id="createDeck"
+        >
+          <i className="bi bi-folder-plus me-2"></i>
+          Create Deck
+        </button>
+      </Link>
       <ul className="list-group">{listItemDecks}</ul>
     </Fragment>
   );

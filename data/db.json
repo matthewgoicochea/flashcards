@@ -115,12 +115,6 @@
       "id": 13
     },
     {
-      "front": "new music card",
-      "back": "quarter note gets 1/4 beats",
-      "deckId": null,
-      "id": 21
-    },
-    {
       "front": "new music",
       "back": "hi",
       "deckId": 3,
@@ -141,12 +135,6 @@
     {
       "front": "oui",
       "back": "yes",
-      "deckId": null,
-      "id": 27
-    },
-    {
-      "front": "oui",
-      "back": "yes",
       "deckId": 6,
       "id": 28
     },
@@ -161,36 +149,6 @@
       "back": "lil bro",
       "deckId": 4,
       "id": 30
-    },
-    {
-      "front": "okaasanN",
-      "back": "motherR",
-      "id": 31,
-      "deckId": "4"
-    },
-    {
-      "front": "otousan",
-      "back": "dad",
-      "id": 32,
-      "deckId": "4"
-    },
-    {
-      "front": "katana",
-      "back": "sword",
-      "deckId": null,
-      "id": 34
-    },
-    {
-      "front": "two",
-      "back": "two",
-      "deckId": null,
-      "id": 36
-    },
-    {
-      "front": "two",
-      "back": "two",
-      "deckId": null,
-      "id": 38
     },
     {
       "front": "kin",
@@ -239,12 +197,6 @@
       "front": "Dos",
       "back": "Two",
       "deckId": 8
-    },
-    {
-      "front": "delete",
-      "back": "nasfd",
-      "deckId": 3,
-      "id": 47
     },
     {
       "id": 48,
