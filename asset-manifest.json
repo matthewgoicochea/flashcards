@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/matthewgoicochea/db-flashcards/static/js/main.7bca4303.chunk.js",
+    "main.js.map": "/matthewgoicochea/db-flashcards/static/js/main.7bca4303.chunk.js.map",
+    "runtime-main.js": "/matthewgoicochea/db-flashcards/static/js/runtime-main.294cf4b3.js",
+    "runtime-main.js.map": "/matthewgoicochea/db-flashcards/static/js/runtime-main.294cf4b3.js.map",
+    "static/js/2.65809858.chunk.js": "/matthewgoicochea/db-flashcards/static/js/2.65809858.chunk.js",
+    "static/js/2.65809858.chunk.js.map": "/matthewgoicochea/db-flashcards/static/js/2.65809858.chunk.js.map",
+    "index.html": "/matthewgoicochea/db-flashcards/index.html",
+    "static/js/2.65809858.chunk.js.LICENSE.txt": "/matthewgoicochea/db-flashcards/static/js/2.65809858.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.294cf4b3.js",
+    "static/js/2.65809858.chunk.js",
+    "static/js/main.7bca4303.chunk.js"
+  ]
+}
