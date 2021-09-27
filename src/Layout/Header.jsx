@@ -2,12 +2,12 @@ import React from "react";
 
 function Header() {
   return (
-    <header className="jumbotron bg-dark">
-      <div className="container text-white">
-        <h1 className="display-4">Flashcard-o-matic</h1>
-        <p className="lead">Discover The Flashcard Difference.</p>
+    <div className="p-5 mb-3 bg-dark text-light">
+      <div className="container-fluid py-5 text-center text-md-start">
+        <h1 className="display-5 fw-bold">Flashcards</h1>
+        <p className="fs-4">make it easy to study hard</p>
       </div>
-    </header>
+    </div>
   );
 }
 
