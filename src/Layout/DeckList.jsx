@@ -1,8 +1,9 @@
 import React, { useEffect, Fragment } from "react";
-import { useHistory } from "react-router";
-import { listDecks } from "../utils/api";
+import { useHistory, Link } from "react-router-dom";
+import { listAllCards, listDecks } from "../utils/api";
+import Dashboard from "./Dashboard";
 
-function DeckList({ OnClick, allDecks, setAllDecks }) {
+function DeckList({ state, setState, OnClick, allDecks, setAllDecks }) {
   const history = useHistory();
 
   // creates iterable array from allDecks
@@ -16,6 +17,12 @@ function DeckList({ OnClick, allDecks, setAllDecks }) {
   // loads all decks
   useEffect(() => {
     const abortController = new AbortController();
+    async function loadState() {
+      const cards = await listAllCards(abortController.signal);
+      setState({ ...state, cards: cards });
+    }
+    loadState();
+    //
     async function loadDecksWithCards() {
       const decks = await listDecks(abortController.signal);
       setAllDecks(decks);
@@ -80,6 +87,16 @@ function DeckList({ OnClick, allDecks, setAllDecks }) {
 
   return (
     <Fragment>
+      <Link to="/decks/new" className="text-decoration-none">
+        <button
+          type="button"
+          className="btn btn-secondary mb-2"
+          id="createDeck"
+        >
+          <i className="bi bi-folder-plus me-2"></i>
+          Create Deck
+        </button>
+      </Link>
       <ul className="list-group">{listItemDecks}</ul>
     </Fragment>
   );

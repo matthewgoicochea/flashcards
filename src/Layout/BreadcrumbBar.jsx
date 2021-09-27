@@ -7,12 +7,18 @@ function BreadcrumbBar({ nav1 = "nav1", link1 = "#", nav2 = false }) {
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item" aria-current="page">
-            <Link to="/">Home</Link>
+            <Link to="/" className="text-decoration-none">
+              Home
+            </Link>
           </li>
           <li className="breadcrumb-item" aria-current="page">
             <Link
               to={`${link1}`}
-              className={nav2 ? "breadcrumb-item" : "breadcrumb-item active"}
+              className={
+                nav2
+                  ? "breadcrumb-item text-decoration-none"
+                  : "breadcrumb-item text-decoration-none active"
+              }
             >
               {nav1}
             </Link>

@@ -43,7 +43,7 @@ function ViewDeck({ OnClick, currentDeck, setCurrentDeck }) {
   const deckControlButtons = (
     <>
       <div className="row mb-4">
-        <div className="col">
+        <div className="col-8">
           <button
             className="btn btn-secondary mr-2"
             id="editDeck"
@@ -67,7 +67,7 @@ function ViewDeck({ OnClick, currentDeck, setCurrentDeck }) {
             Add Cards
           </button>
         </div>
-        <div className="col text-right">
+        <div className="col text-end">
           <button
             className="btn btn-danger"
             id="deleteDeck"
@@ -104,16 +104,16 @@ function ViewDeck({ OnClick, currentDeck, setCurrentDeck }) {
               <div className="card-body">
                 <p className="card-text">{back}</p>
               </div>
-              <div className="text-right" id={`${id}`}>
+              <div className="text-end" id={`${id}`}>
                 <button
-                  className="btn btn-secondary mr-2"
+                  className="btn btn-outline-secondary mr-2"
                   id="editCard"
                   onClick={OnEditCard}
                 >
                   Edit
                 </button>
                 <button
-                  className="btn btn-danger"
+                  className="btn btn-outline-danger"
                   id="deleteCard"
                   onClick={OnClick}
                 >
