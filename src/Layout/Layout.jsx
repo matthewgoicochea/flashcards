@@ -30,6 +30,7 @@ function Layout() {
 
   //main state
   const [state, setState] = useState({
+    darkMode: false,
     cards: [],
   });
 
@@ -88,7 +89,7 @@ function Layout() {
         <Switch>
           {/* HOME */}
           <Route exact={true} path="/">
-            <Dashboard allDecks={allDecks} state={state} />
+            <Dashboard allDecks={allDecks} state={state} setState={setState} />
             <DeckList
               state={state}
               setState={setState}
