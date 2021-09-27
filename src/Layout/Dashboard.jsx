@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DeckList from "./DeckList";
 
-function Dashboard({ state, setState, allDecks }) {
+function Dashboard({ state, setState, allDecks, setAllDecks, OnClick }) {
   function toggleDarkMode() {
     setState({ ...state, darkMode: !state.darkMode });
 
@@ -9,12 +10,17 @@ function Dashboard({ state, setState, allDecks }) {
     const buttons = document.querySelectorAll("button");
     const listItems = document.querySelectorAll("li");
     const cards = document.querySelectorAll(".card");
-    const header = document.querySelector(".header");
+    const sun = document.querySelector("#sun");
+    const moon = document.querySelector("#moon");
 
     if (state.darkMode) {
       // toggle on
+      sun.classList.add("d-none");
+      moon.classList.remove("d-none");
       body.classList.add("bg-dark");
       body.classList.add("text-light");
+      body.classList.remove("text-dark");
+
       buttons.forEach((btn) => {
         btn.classList.add("text-light");
       });
@@ -26,12 +32,14 @@ function Dashboard({ state, setState, allDecks }) {
         card.classList.add("bg-dark");
         card.classList.add("text-light");
       });
-      header.classList.remove("bg-dark");
-      header.classList.add("bg-darker");
     } else {
       //toggle off
+      sun.classList.remove("d-none");
+      moon.classList.add("d-none");
       body.classList.remove("bg-dark");
       body.classList.remove("text-light");
+      body.classList.add("text-dark");
+
       buttons.forEach((btn) => {
         btn.classList.remove("text-light");
       });
@@ -42,12 +50,51 @@ function Dashboard({ state, setState, allDecks }) {
         card.classList.remove("bg-dark");
         card.classList.remove("text-light");
       });
-      header.classList.add("bg-dark");
-      header.classList.remove("bg-darker");
     }
   }
 
-  /*
+  return (
+    <>
+      <div className="container">
+        <div className="row">
+          <h1 className="col h1">Dashboard</h1>
+          <div className="col text-end">
+            <button className="btn shadow-none" onClick={toggleDarkMode}>
+              <i
+                className="bi bi-brightness-high text-dark d-none"
+                id="sun"
+              ></i>
+              <i className="bi bi-moon text-light" id="moon"></i>
+            </button>
+          </div>
+        </div>
+        <Link to="/decks/new">
+          <button
+            type="button"
+            className="btn btn-secondary mb-2"
+            id="createDeck"
+          >
+            Create Deck
+          </button>
+        </Link>
+        <p>Decks: {allDecks.length}</p>
+        <p>Cards: {state.cards.length}</p>
+        <div className="study-checklist"></div>
+      </div>
+      <DeckList
+        state={state}
+        setState={setState}
+        OnClick={OnClick}
+        allDecks={allDecks}
+        setAllDecks={setAllDecks}
+      />
+    </>
+  );
+}
+
+export default Dashboard;
+
+/*
   const onSave = (event) => {
     console.log(checks);
     //add checked to array values
@@ -81,32 +128,3 @@ function Dashboard({ state, setState, allDecks }) {
       </div>
     );
   });*/
-
-  return (
-    <div className="container">
-      <div className="row">
-        <h1 className="col h1">Dashboard</h1>
-        <button
-          className="col text-end btn shadow-none d-none"
-          onClick={toggleDarkMode}
-        >
-          mode
-        </button>
-      </div>
-      <Link to="/decks/new">
-        <button
-          type="button"
-          className="btn btn-secondary mb-2"
-          id="createDeck"
-        >
-          Create Deck
-        </button>
-      </Link>
-      <p>Decks: {allDecks.length}</p>
-      <p>Cards: {state.cards.length}</p>
-      <div className="study-checklist"></div>
-    </div>
-  );
-}
-
-export default Dashboard;

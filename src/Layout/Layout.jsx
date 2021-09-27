@@ -4,7 +4,6 @@ import Header from "./Header";
 import NotFound from "./NotFound";
 import Dashboard from "./Dashboard";
 import CreateDeck from "./CreateDeck";
-import DeckList from "./DeckList";
 import Study from "./Study";
 import EditDeck from "./EditDeck";
 import AddCard from "./AddCard";
@@ -89,14 +88,14 @@ function Layout() {
         <Switch>
           {/* HOME */}
           <Route exact={true} path="/">
-            <Dashboard allDecks={allDecks} state={state} setState={setState} />
-            <DeckList
+            <Dashboard
+              allDecks={allDecks}
+              setAllDecks={setAllDecks}
               state={state}
               setState={setState}
               OnClick={OnClick}
-              allDecks={allDecks}
-              setAllDecks={setAllDecks}
             />
+            
           </Route>
           {/* EDIT CARD */}
           <Route path="/decks/:deckId/cards/:cardId/edit">
