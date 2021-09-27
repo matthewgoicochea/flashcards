@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 import Header from "./Header";
 import NotFound from "./NotFound";
-import Dashboard from "./Dashboard";
 import CreateDeck from "./CreateDeck";
 import Study from "./Study";
 import EditDeck from "./EditDeck";
 import AddCard from "./AddCard";
 import EditCard from "./EditCard";
-import { createDeck, deleteCard, deleteDeck } from "../utils/api";
+import { createDeck, deleteCard } from "../utils/api";
 import ViewDeck from "./ViewDeck";
 import DeckList from "./DeckList";
 
@@ -26,12 +25,6 @@ function Layout() {
     edit: false,
     front: "Front",
     back: "Back",
-  });
-
-  //main state
-  const [state, setState] = useState({
-    darkMode: false,
-    cards: [],
   });
 
   // for navigation
@@ -90,8 +83,6 @@ function Layout() {
           {/* HOME */}
           <Route exact={true} path="/">
             <DeckList
-              state={state}
-              setState={setState}
               OnClick={OnClick}
               allDecks={allDecks}
               setAllDecks={setAllDecks}

@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import DeckList from "./DeckList";
-import { listAllCards } from "../utils/api";
-import { listDecks } from "../utils/api";
 
 function Dashboard({ state, setState, allDecks, OnClick, setAllDecks }) {
   function toggleDarkMode() {
@@ -41,7 +39,7 @@ function Dashboard({ state, setState, allDecks, OnClick, setAllDecks }) {
       moon.classList.remove("d-none");
 
       body.classList.remove("bg-dark");
-       body.classList.remove("text-light");
+      body.classList.remove("text-light");
       body.classList.add("text-dark");
 
       buttons.forEach((btn) => {

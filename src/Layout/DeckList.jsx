@@ -1,7 +1,6 @@
 import React, { useEffect, Fragment } from "react";
 import { useHistory, Link } from "react-router-dom";
-import { listAllCards, listDecks } from "../utils/api";
-import Dashboard from "./Dashboard";
+import {  listDecks } from "../utils/api";
 
 function DeckList({ state, setState, OnClick, allDecks, setAllDecks }) {
   const history = useHistory();
@@ -17,19 +16,13 @@ function DeckList({ state, setState, OnClick, allDecks, setAllDecks }) {
   // loads all decks
   useEffect(() => {
     const abortController = new AbortController();
-    async function loadState() {
-      const cards = await listAllCards(abortController.signal);
-      setState({ ...state, cards: cards });
-    }
-    loadState();
-    //
     async function loadDecksWithCards() {
       const decks = await listDecks(abortController.signal);
       setAllDecks(decks);
     }
     loadDecksWithCards();
     return () => abortController.abort();
-  }, [setAllDecks]);
+  }, [state, setState, setAllDecks]);
 
   async function deleteDeck(event) {
     const restart = window.confirm(

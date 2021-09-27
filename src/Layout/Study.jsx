@@ -23,7 +23,7 @@ function Study({ currentDeck, setCurrentDeck }) {
       });
     });
     return () => abortController.abort();
-  }, []);
+  }, [deckId, setCurrentDeck]);
 
   // flips card
   const onFlip = () => {

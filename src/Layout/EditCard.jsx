@@ -34,7 +34,7 @@ function EditCard({ newCard, setNewCard, currentDeck }) {
         });
       });
     return () => abortController.abort();
-  }, []);
+  }, [cardId, deckId, editCardState, setNewCard]);
 
   const onCancel = () => {
     setEditCardState({ edit: false });

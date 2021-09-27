@@ -22,7 +22,7 @@ function ViewDeck({ OnClick, currentDeck, setCurrentDeck }) {
       });
     });
     return () => abortController.abort();
-  }, []);
+  }, [deckId, setCurrentDeck]);
 
   // delete deck handler
   async function deleteDeck(event) {

@@ -24,7 +24,7 @@ function AddCard({
       setCurrentDeck({ ...currentDeck, name: deck.name });
     });
     return () => abortController.abort();
-  }, [deckId]);
+  }, [deckId, currentDeck, setCurrentDeck]);
 
   const OnDone = () => {
     history.push(`/decks/${deckId}`);

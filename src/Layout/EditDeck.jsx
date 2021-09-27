@@ -24,7 +24,7 @@ function EditDeck({ OnClick, newDeckObject }) {
     history.push(`/decks/${deckId}`);
   };
 
-	// submits updated deck
+  // submits updated deck
   const onSubmit = (event) => {
     const abortController = new AbortController();
     updateDeck(editState.editedDeck, abortController.signal);
@@ -32,7 +32,7 @@ function EditDeck({ OnClick, newDeckObject }) {
     return () => abortController.abort();
   };
 
-	// loads deck to edit and sets edit state
+  // loads deck to edit and sets edit state
   useEffect(() => {
     const abortController = new AbortController();
     async function loadDeck() {
@@ -46,7 +46,7 @@ function EditDeck({ OnClick, newDeckObject }) {
     }
     loadDeck();
     return () => abortController.abort();
-  }, []);
+  }, [deckId, editState]);
 
   return (
     <>
