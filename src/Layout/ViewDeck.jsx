@@ -104,16 +104,16 @@ function ViewDeck({ OnClick, currentDeck, setCurrentDeck }) {
               <div className="card-body">
                 <p className="card-text">{back}</p>
               </div>
-              <div className="text-right" id={`${id}`}>
+              <div className="text-end" id={`${id}`}>
                 <button
-                  className="btn btn-secondary mr-2"
+                  className="btn btn-outline-secondary mr-2"
                   id="editCard"
                   onClick={OnEditCard}
                 >
                   Edit
                 </button>
                 <button
-                  className="btn btn-danger"
+                  className="btn btn-outline-danger"
                   id="deleteCard"
                   onClick={OnClick}
                 >
