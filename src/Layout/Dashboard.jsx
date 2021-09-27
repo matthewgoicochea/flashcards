@@ -15,8 +15,9 @@ function Dashboard({ state, setState, allDecks, setAllDecks, OnClick }) {
 
     if (state.darkMode) {
       // toggle on
-      sun.classList.add("d-none");
-      moon.classList.remove("d-none");
+      sun.classList.remove("d-none");
+      moon.classList.add("d-none");
+
       body.classList.add("bg-dark");
       body.classList.add("text-light");
       body.classList.remove("text-dark");
@@ -34,8 +35,9 @@ function Dashboard({ state, setState, allDecks, setAllDecks, OnClick }) {
       });
     } else {
       //toggle off
-      sun.classList.remove("d-none");
-      moon.classList.add("d-none");
+      sun.classList.add("d-none");
+      moon.classList.remove("d-none");
+
       body.classList.remove("bg-dark");
       body.classList.remove("text-light");
       body.classList.add("text-dark");
@@ -61,10 +63,10 @@ function Dashboard({ state, setState, allDecks, setAllDecks, OnClick }) {
           <div className="col text-end">
             <button className="btn shadow-none" onClick={toggleDarkMode}>
               <i
-                className="bi bi-brightness-high text-dark d-none"
+                className="bi bi-brightness-high text-light d-none"
                 id="sun"
               ></i>
-              <i className="bi bi-moon text-light" id="moon"></i>
+              <i className="bi bi-moon text-dark" id="moon"></i>
             </button>
           </div>
         </div>
